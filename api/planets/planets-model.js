@@ -9,6 +9,6 @@ function find() {
     return 'getting planets'
 }
 
-function findById(id) {
-    return `getting planet by id ${id}`
+function findById(planet_id) {
+    return `getting planet by id ${planet_id}`
 }

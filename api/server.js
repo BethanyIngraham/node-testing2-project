@@ -1,15 +1,15 @@
-const express = require('express')
-const planetsRouter = require('./planets/planets-router')
+const express = require('express');
+const planetsRouter = require('./planets/planets-router');
 
-const server = express()
+const server = express();
 
-server.use(express.json())
+server.use(express.json());
 
-server.use('/api/planets', planetsRouter)
+server.use('/api/planets', planetsRouter);
 
 server.get('*', (req, res) => {
-    res.json('testing endpoint')
-})
+    res.json('testing endpoint');
+});
 
 server.use((err, req, res, next) => { // eslint-disable-line
     res.status(err.status || 500).json({
@@ -17,6 +17,6 @@ server.use((err, req, res, next) => { // eslint-disable-line
         || 'something went wrong with the server',
         stack: err.stack
     })
-})
+});
 
-module.exports = server
+module.exports = server;
