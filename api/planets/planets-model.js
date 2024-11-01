@@ -1,4 +1,4 @@
-// bring in database here
+const db = require('../../data/db-config');
 
 module.exports = {
     find,
@@ -6,9 +6,9 @@ module.exports = {
 }
 
 function find() {
-    return 'getting planets'
+    return db('planets')
 }
 
 function findById(planet_id) {
-    return `getting planet by id ${planet_id}`
+    return db('planets').where('planet_id', planet_id).first()
 }
